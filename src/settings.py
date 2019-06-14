@@ -4,20 +4,15 @@ PROJECT = 'sample'
 WEBSHEET_FILENAME = "sample_websheet.xlsx"
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
-PROJECT_DIRECTORY = os.path.dirname(file_directory)
-WEBSHEET_DIR = os.path.join(PROJECT_DIRECTORY, "websheet")
-WEBSHEET_PATH = os.path.join(WEBSHEET_DIR, WEBSHEET_FILENAME)
-
-output_directory = os.path.join(PROJECT_DIRECTORY, 'output')
+project_dir = os.path.dirname(file_directory)
+websheet_dir = os.path.join(project_dir, "websheet")
+websheet_path = os.path.join(websheet_dir, WEBSHEET_FILENAME)
+output_directory = os.path.join(project_dir, 'output')
 
 outfile = PROJECT + '.sql'
 outfile_path = os.path.join(output_directory, outfile)
 
-
-
 SURVEY_TYPE = 'WEBSRG'  # PUT IN CAPS
-
-
 
 added_sections_list = []
 

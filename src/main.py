@@ -3,8 +3,8 @@
 
 import codecs
 import logging
-from src.functions import *
 import pandas as pd
+from src.functions import *
 from src.settings import *
 
 
@@ -17,7 +17,7 @@ master_string = '\n'
 master_string = initial_setup(PROJECT, master_string)
 
 
-with pd.ExcelFile(WEBSHEET_PATH) as xlsx:
+with pd.ExcelFile(websheet_path) as xlsx:
     data = pd.read_excel(xlsx, 'Websheet')
     try:
         GeneralContent = pd.read_excel(xlsx, 'GeneralContent')
@@ -129,10 +129,6 @@ for i in range(len(list_of_blocks)):
 # Generate the Answers table
 master_string = build_answers_table(names, PROJECT, master_string, dict_question_display_function)
 
-
-# Define working blocks
-
-
 # Create Mandatory table and fill
 master_string = build_mandatory_questions_table(mandatory_list, PROJECT, master_string)
 
@@ -141,13 +137,10 @@ master_string = build_skips_table(PROJECT, master_string)  # create table
 if skips_check:
     master_string = fill_skips_table(Skips, master_string)
 
-
-
 # General Content
 master_string = build_general_content_table(master_string, PROJECT)
 if general_content_check:
     master_string = fill_general_content(GeneralContent, master_string)
-
 
 # Matrix Tables
 if matrix_check:
@@ -161,10 +154,8 @@ if SURVEY_TYPE == 'CATI':
 # Grants
 master_string = build_grant_statements(PROJECT, master_string, SURVEY_TYPE)
 
-
 # Fill Access table with test cases
 master_string = fill_access_table_with_test_cases(PROJECT, master_string)
-
 
 with codecs.open(outfile_path, 'w', 'utf8') as sqlfile:
     sqlfile.write(master_string)
