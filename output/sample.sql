@@ -643,7 +643,7 @@ Please enter your passcode:
 <div class="warning">Login failed. Please try again.</div>
 <br />
 <br />
-For help with your passcode or difficulties viewing the survey, please call Strategic Research Group at 1-800-341-3660 or email marinersurvey@websrg.com.
+For help with your passcode or difficulties viewing the survey, please call SAMPLE COMPANY at 1-800-XXX-XXXX or email marinersurvey@websrg.com.
 <br />
 <br />
 If you think you may have entered your passcode incorrectly, please try again:
@@ -655,7 +655,7 @@ If you think you may have entered your passcode incorrectly, please try again:
 '
 <h2 class="warning">Passcode expired</h2>
 <p>
-Our records indicate that this passcode has already been used. This message appears if you have already completed the survey. If you think this is an error, please call Strategic Research Group at 1-800-341-3660 or email marinersurvey@websrg.com.
+Our records indicate that this passcode has already been used. This message appears if you have already completed the survey. If you think this is an error, please call SAMPLE COMPANY  at 1-800-XXX-XXXX or email sampleemail@sample.com.
 </p>
 <p>
 If you think you may have entered your passcode incorrectly, please click
@@ -687,7 +687,7 @@ To continue the survey now, click [RETURN_TO_SURVEY].
 Thank you for completing the [SURVEY_TITLE].
 </p>
 <p>
-If you have questions about this survey, please call 1-800-341-3660 or e-mail [SURVEY_EMAIL].
+If you have questions about this survey, please call 1-800-XXX-XXX or e-mail [SURVEY_EMAIL].
 </p>
 </div>
 <br />
@@ -701,7 +701,7 @@ If you have questions about this survey, please call 1-800-341-3660 or e-mail [S
 '
 <div class="thankyou">
 <p>
-Thank you for using the SRG WebCATI System!
+Thank you for using the SAMPLE COMPANY Survey System!
 </p>
 </div>
 <br />
@@ -715,12 +715,11 @@ Please close your browser window or click <a class="resource_button" href="[SURV
 ',
 '
 <div id="intro">
-<p><b> Paperwork Reduction Act Information </b></p>
+<p><b> Lorem Ipsum </b></p>
 <p>
-A federal agency may not conduct or sponsor, and a person is not required to respond to, nor shall a person be subject to a penalty for failure to comply with a collection of information subject to the requirements of the Paperwork Reduction Act unless that collection of information displays a current valid OMB Control Number. The OMB Control Number for this information collection is <mark>2133-NEW</mark>. Public reporting for this collection of information is estimated to be approximately <mark>30 minutes</mark> per response, including the time for reviewing instructions, completing and reviewing the collection of information. All responses to this collection of information are voluntary. Send comments regarding this burden estimate or any other aspect of this collection of information, including suggestions for reducing this burden to: Information Collection Clearance Officer, Maritime Administration, MAR-390, W26-494, 1200 New Jersey Avenue, SE, Washington, DC 20590.
-</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec malesuada magna. Donec lacinia ac orci eu sollicitudin. Vestibulum lobortis venenatis imperdiet. In ullamcorper mattis sapien nec eleifend. Duis et hendrerit nibh. Duis mauris lacus, vestibulum euismod libero vitae, dictum pretium nunc. Phasellus sollicitudin pellentesque diam, sed pharetra erat lacinia vitae.</p>
 <p>
-OMB No. <mark>2133-NEW</mark>. Approval Expires <mark>MM-DD-YYYY</mark>
+Praesent eget commodo eros, eu pulvinar diam. Pellentesque ultrices malesuada nunc vitae finibus. Nullam iaculis pellentesque porta. Cras ut velit nulla. Ut vel nisi scelerisque, lacinia arcu eu, blandit metus. Nulla odio neque, accumsan sed cursus a, pharetra nec urna. Ut fermentum id nulla ut pulvinar. Nunc vel est tincidunt, ullamcorper nibh ut, hendrerit tellus. Mauris id pellentesque libero. Cras vitae quam purus. Etiam nulla arcu, porttitor nec congue sit amet, elementum eleifend velit.
 </p>
 </div>
 <p></p>
@@ -748,13 +747,9 @@ Note:
 </li>
 </ul>
 </li>
-<li> Several questions include the term "National Need." This refers to war, armed conflict, national emergency, or maritime mobilization need.
-</li>
-<li> There are several questions that ask for a specific year. For these, please answer as accurately as possible, but provide your best guess when you are unsure about the exact year.
-</li>
 </ul>
 <p style="font-weight: bold">
-If you have any questions about the survey, please call Strategic Research Group at 1-800-341-3660 Monday-Thursday between 9:00am-9:30pm Eastern Standard Time (EST), Friday between 9:00am-5:00pm EST or email us at [SURVEY_EMAIL].   <br /> <br />
+If you have any questions about the survey, please call SAMPLE COMPNAY at 1-800-XXX-XXX Monday-Thursday between 9:00am-9:30pm Eastern Standard Time (EST), Friday between 9:00am-5:00pm EST or email us at [SURVEY_EMAIL].   <br /> <br />
 </p>
 </div>
 ',
@@ -795,16 +790,16 @@ INSERT INTO MatrixResponses.NoYes (label, text, value) VALUES ('Yes', 'Yes', '1'
 -- Granting the survey proper rights
 
 GRANT SELECT ON sample.*
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT SELECT ON sample.Access
-TO 'SRGdata'@'%';
+TO 'SampleUser'@'%';
 
 GRANT UPDATE (identifier, saved, status) on sample.Access
-TO 'SRGdata'@'%';
+TO 'SampleUser'@'%';
 
 GRANT SELECT ON sample.Answers
-TO 'SRGdata'@'%';
+TO 'SampleUser'@'%';
 
 GRANT SELECT, UPDATE ON sample.Access
 TO 'athena'@'localhost';
@@ -825,22 +820,22 @@ GRANT SELECT, UPDATE ON GeneralContent.sample
 TO 'heimdal'@'localhost';
 
 GRANT UPDATE ON sample.Answers
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT UPDATE (pw_assigned, saved, status) ON sample.Access
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT INSERT, DELETE ON sample.Stack
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT INSERT, UPDATE ON sample.Pipeline
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT SELECT ON MatrixResponses.*
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 GRANT SELECT ON GeneralContent.sample
-TO 'sample_work'@'localhost' IDENTIFIED BY 'm@st3r_0f_fubar';
+TO 'sample_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss';
 
 INSERT INTO sample.Access (identifier, batch_number)
 VALUES ('test001', '190614');
