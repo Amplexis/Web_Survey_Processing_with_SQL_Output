@@ -179,7 +179,7 @@ def build_list_of_blocks(data):
     return return_list
 
 
-def create_df_blocks(list_of_block_pairs, data):
+def create_df_blocks(list_of_block_pairs):
     new_list = []
     for i, tuple in enumerate(list_of_block_pairs):
         s, q = tuple[0], tuple[1]
@@ -471,8 +471,6 @@ def prepare_to_build_question(block, master_string, logging, dict, names):
         if return_value != 'DisplayNothing':
             build_question_disp_func_dict(return_value, display_function, dict)
 
-    # return dict
-
 
 def build_question(section, qnumber, subQ, display_function, answer_value, has_other, has_textyear, has_explain):
     temp_lst = []
@@ -749,7 +747,6 @@ def initial_matrix_setup(master_string):
 
 def process_matrix_tables(block, master_string):
     list_matrix_tables = []
-    new = True
     for index, row in block.iterrows():
         table_name = check(row['table_name'])
         label = check(row['label'])
@@ -843,7 +840,7 @@ def build_grant_statements(PROJECT, master_string, SURVEY_TYPE):
 def fill_grants_WEB(PROJECT, master_string):
     user = "'SampleUser'@'%'"
     user1 = "'user1'@'localhost'"
-    user2 = "'heimdal'@'localhost'"
+    user2 = "'user2'@'localhost'"
     work_account = "'{}_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss'".format(PROJECT)
 
     string = (

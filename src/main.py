@@ -46,7 +46,7 @@ lol_block_details = build_list_of_blocks(data)
 
 list_of_blocks = lol_block_details[0]
 list_of_block_pairs = lol_block_details[1]
-block_list = create_df_blocks(list_of_block_pairs, data)  # All blocks are created here
+block_list = create_df_blocks(list_of_block_pairs)  # All blocks are created here
 
 # The dictionary contains all the base questions as keys, and their dataframe blocks as values
 dictionary = dict(zip(list_of_blocks, block_list))
