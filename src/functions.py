@@ -836,14 +836,14 @@ def build_grant_statements(PROJECT, master_string, SURVEY_TYPE):
         master_string = update_master_string(string, master_string)
         master_string = fill_grants_CATI(PROJECT, master_string)
     else:
-        master_string = fill_grants_WEBSRG(PROJECT, master_string)
+        master_string = fill_grants_WEB(PROJECT, master_string)
     return master_string
 
 
-def fill_grants_WEBSRG(PROJECT, master_string):
-    srg = "'SampleUser'@'%'"
-    athena = "'athena'@'localhost'"
-    kristen = "'heimdal'@'localhost'"
+def fill_grants_WEB(PROJECT, master_string):
+    user = "'SampleUser'@'%'"
+    user1 = "'user1'@'localhost'"
+    user2 = "'heimdal'@'localhost'"
     work_account = "'{}_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss'".format(PROJECT)
 
     string = (
@@ -882,15 +882,15 @@ def fill_grants_WEBSRG(PROJECT, master_string):
         "TO {1};\n\n"
         "GRANT SELECT ON GeneralContent.{0}\n"
         "TO {1};\n\n"
-    ).format(PROJECT, work_account, srg, athena, kristen)
+    ).format(PROJECT, work_account, user, user1, user2)
     master_string = update_master_string(string, master_string)
     return master_string
 
 
 def fill_grants_CATI(PROJECT, master_string):
-    srg = "'SampleUser'@'%'"
-    athena = "'athena'@'localhost'"
-    kristen = "'heimdal'@'localhost'"
+    user = "'SampleUser'@'%'"
+    user1 = "'user1'@'localhost'"
+    user2 = "'user2'@'localhost'"
     work_account = "'{}_work'@'localhost' IDENTIFIED BY 's@mpl3_p@ss'".format(PROJECT)
 
     string = (
@@ -933,6 +933,6 @@ def fill_grants_CATI(PROJECT, master_string):
         "TO {1};\n\n"
         "GRANT SELECT ON GeneralContent.{0}\n"
         "TO {1};\n\n"
-    ).format(PROJECT, work_account, srg, athena, kristen)
+    ).format(PROJECT, work_account, user, user1, user2)
     master_string = update_master_string(string, master_string)
     return master_string

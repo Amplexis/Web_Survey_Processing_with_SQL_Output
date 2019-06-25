@@ -802,10 +802,10 @@ GRANT SELECT ON sample.Answers
 TO 'SampleUser'@'%';
 
 GRANT SELECT, UPDATE ON sample.Access
-TO 'athena'@'localhost';
+TO 'user1'@'localhost';
 
 GRANT SELECT, UPDATE ON sample.Answers
-TO 'athena'@'localhost';
+TO 'user1'@'localhost';
 
 GRANT SELECT, UPDATE ON sample.Access
 TO 'heimdal'@'localhost';
@@ -814,7 +814,7 @@ GRANT SELECT, UPDATE ON sample.Answers
 TO 'heimdal'@'localhost';
 
 GRANT SELECT, UPDATE ON GeneralContent.sample
-TO 'athena'@'localhost';
+TO 'user1'@'localhost';
 
 GRANT SELECT, UPDATE ON GeneralContent.sample
 TO 'heimdal'@'localhost';
