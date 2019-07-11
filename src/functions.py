@@ -238,10 +238,6 @@ def build_insert_questions(PROJECT, page, section, base, question_text, display_
     return master_string
 
 
-# def build_insert_single_questions(base, display_function, resp_tbl_name):
-#     return None
-
-
 def build_response_table(base, master_string):
     string = (
         '-- -------------------------------------------------------------------------\n'
